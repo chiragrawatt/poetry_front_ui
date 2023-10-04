@@ -33,15 +33,21 @@
     text-decoration: none;
     color: rgb(245, 244, 240);
     font-family: 'Roboto', sans-serif;
-    font-size: 1vmax;
+    font-size: 12px;
 }
 
-#nav i {
-    height: 1vmax;
+#nav div {
+    display: flex;
+    gap: 5px;
 }
 
-.ri-search-line {
-    color: rgb(245, 244, 240);
+#search-icon {
+    height: 14px;
+}
+
+.ri-menu-3-line {
+    display: none;
+    color: rgb(234, 244, 240);
 }
 
 #starter-content {
@@ -100,15 +106,23 @@
     padding: 7vw;
 }
 
-/* .rotated-text{
-    display: inline;
-    rotate: -90deg;
-} */
+#mid-left {
+    display: flex;
+}
+
+.rotated-text p {
+    writing-mode: vertical-lr;
+    transform: rotate(180deg);
+    color: rgb(171, 151, 104);
+    font-size: 14px;
+    font-weight: 600;
+}
 
 #description-container {
     flex-direction: column;
-    max-width: 50%;
+    max-width: 60%;
     color: rgb(67, 82, 89);
+    margin-left: 5vmax;
 }
 
 #description-container h1{
@@ -128,21 +142,18 @@
 #description-container a{
     margin-top: 2vmax;
     text-decoration: none;
-}
-
-#description-container a:link{
     color: rgb(67, 82, 89);
+    font-weight: bold;
 }
-
 
 #playlist-container {
     flex-direction: column;
-    justify-content: space-between;
+    min-width: 20vmax;
 }
 
 .playlist {
     display: flex;
-    margin-top: 1.5vw;
+    margin-top: 30px;
 }
 
 .box {
@@ -152,7 +163,6 @@
     background-color: white;
     height: 60px;
     width: 60px;
-    text-align: center;
     font-size: 30px;
     color: rgb(171, 151, 104);
     font-weight: bold;
@@ -202,6 +212,14 @@
 }
 
 @media (max-width: 600px) {
+    #nav {
+        display: none;
+    }
+
+    .ri-menu-3-line {
+        display: contents;
+    }
+
     #starter-content {
         flex-direction: column;
     }
@@ -209,5 +227,27 @@
     #welcome-container {
         margin-top: 3vw;
         max-width: 80%;
+    }
+
+    #mid-content {
+        flex-direction: column;
+    }
+
+    #mid-left {
+        flex-direction: column;
+    }
+
+    #playlist-container {
+        align-items: center;
+    }
+
+    #description-container {
+        max-width: 100%;
+        margin-left: 0;
+    }
+
+    .rotated-text p {
+        writing-mode: horizontal-tb;
+        transform: none;
     }
 }
